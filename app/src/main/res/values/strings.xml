@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">Quản lý kho hàng</string>
+    <string name="app_slogan">Hệ thống quản lý kho</string>
+
+    <!-- ===== Đăng nhập ===== -->
+    <string name="login_tagline">Quản lý kho hàng dễ dàng hơn mỗi ngày</string>
+    <string name="login_title">Đăng nhập</string>
+    <string name="login_subtitle">Chào mừng bạn quay trở lại! Vui lòng đăng nhập để tiếp tục.</string>
+    <string name="label_username">Tên đăng nhập</string>
+    <string name="label_password">Mật khẩu</string>
+    <string name="hint_username">Nhập tên đăng nhập</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+    <string name="action_login">Đăng nhập</string>
+    <string name="error_username_empty">Vui lòng nhập tên đăng nhập</string>
+    <string name="error_password_empty">Vui lòng nhập mật khẩu</string>
+    <string name="error_login_empty">Vui lòng nhập đầy đủ tên đăng nhập và mật khẩu</string>
+    <string name="error_login_invalid">Sai tên đăng nhập hoặc mật khẩu</string>
+    <string name="demo_account_title">Tài khoản dùng thử</string>
+    <string name="demo_account_hint">Chạm để điền nhanh</string>
+    <string name="demo_username_label">Username</string>
+    <string name="demo_password_label">Password</string>
+    <string name="demo_username">admin</string>
+    <string name="demo_password">123456</string>
+    <string name="login_footer">Ứng dụng Quản lý kho hàng</string>
+
+    <!-- ===== Màn hình chính ===== -->
+    <string name="greeting_format">Xin chào, %1$s 👋</string>
+    <string name="greeting_default_name">Admin</string>
+    <string name="main_title">Tổng quan kho hàng</string>
+    <string name="main_subtitle">Theo dõi và quản lý sản phẩm của bạn</string>
+    <string name="stat_total_value">Tổng giá trị kho</string>
+    <string name="stat_total_value_hint">Σ giá bán × số lượng tồn kho</string>
+    <string name="stat_total_products">Tổng sản phẩm</string>
+    <string name="stat_total_products_hint">Mặt hàng trong kho</string>
+    <string name="stat_low_stock">Sắp hết hàng</string>
+    <string name="stat_low_stock_hint">Tồn kho dưới 5</string>
+    <string name="currency_badge">VNĐ</string>
+    <string name="product_list_title">📦 Danh sách sản phẩm</string>
+    <string name="product_count_format">%1$d sản phẩm</string>
+    <string name="action_add_product">Thêm sản phẩm</string>
+    <string name="action_add_product_plus">+ Thêm sản phẩm</string>
+    <string name="action_logout">Đăng xuất</string>
+    <string name="empty_title">Kho hàng đang trống</string>
+    <string name="empty_subtitle">Hãy thêm sản phẩm đầu tiên của bạn</string>
+    <string name="label_in_stock">tồn kho</string>
+    <string name="badge_low_stock">Sắp hết hàng</string>
+    <string name="badge_out_of_stock">Hết hàng</string>
+    <string name="logout_title">Đăng xuất</string>
+    <string name="logout_message">Bạn có muốn đăng xuất khỏi ứng dụng Quản lý kho hàng?</string>
+
+    <!-- ===== Thêm sản phẩm ===== -->
+    <string name="add_title">Thêm sản phẩm</string>
+    <string name="add_subtitle">Điền thông tin sản phẩm mới</string>
+    <string name="section_basic_info">Thông tin cơ bản</string>
+    <string name="section_price_stock">Giá bán &amp; tồn kho</string>
+    <string name="section_status_description">Trạng thái &amp; mô tả</string>
+    <string name="label_product_name">Tên sản phẩm *</string>
+    <string name="label_category">Loại sản phẩm</string>
+    <string name="label_price">Giá bán (VNĐ) *</string>
+    <string name="label_quantity">Số lượng *</string>
+    <string name="label_description">Mô tả</string>
+    <string name="hint_product_name">Ví dụ: Tai nghe Bluetooth</string>
+    <string name="hint_price">Ví dụ: 200000</string>
+    <string name="hint_quantity">Ví dụ: 10</string>
+    <string name="hint_description">Nhập mô tả sản phẩm...</string>
+    <string name="suffix_currency">đ</string>
+    <string name="suffix_quantity">sản phẩm</string>
+    <string name="price_preview_format">Hiển thị: %1$s</string>
+    <string name="label_active">Đang kinh doanh</string>
+    <string name="active_on_description">Sản phẩm đang được bán</string>
+    <string name="active_off_description">Tạm ngừng kinh doanh</string>
+    <string name="action_save_product">Lưu sản phẩm</string>
+    <string name="error_name_empty">Vui lòng nhập tên sản phẩm</string>
+    <string name="error_price_empty">Vui lòng nhập giá bán</string>
+    <string name="error_price_invalid">Giá bán phải là số nguyên hợp lệ</string>
+    <string name="error_price_not_positive">Giá bán phải lớn hơn 0</string>
+    <string name="error_price_too_large">Giá bán tối đa là %1$s</string>
+    <string name="error_quantity_empty">Vui lòng nhập số lượng</string>
+    <string name="error_quantity_invalid">Số lượng phải là số nguyên hợp lệ</string>
+    <string name="error_quantity_negative">Số lượng không được âm</string>
+    <string name="error_quantity_too_large">Số lượng tối đa là %1$s</string>
+    <string name="error_form_invalid">Vui lòng kiểm tra lại thông tin sản phẩm</string>
+    <string name="add_success">Thêm sản phẩm thành công</string>
+    <string name="add_failed">Không thể lưu sản phẩm. Vui lòng thử lại.</string>
+
+    <string-array name="product_categories">
+        <item>Điện tử</item>
+        <item>Thực phẩm</item>
+        <item>Văn phòng phẩm</item>
+        <item>Gia dụng</item>
+        <item>Khác</item>
+    </string-array>
+
+    <!-- ===== Chi tiết sản phẩm ===== -->
+    <string name="detail_title">Chi tiết sản phẩm</string>
+    <string name="detail_subtitle">Thông tin &amp; quản lý tồn kho</string>
+    <string name="label_selling_price">Giá bán</string>
+    <string name="section_inventory">Thông tin tồn kho</string>
+    <string name="label_stock_quantity">Số lượng tồn</string>
+    <string name="label_stock_value">Giá trị tồn kho</string>
+    <string name="unit_product">sản phẩm</string>
+    <string name="stock_value_formula">giá bán × số lượng</string>
+    <string name="section_description">Mô tả sản phẩm</string>
+    <string name="description_empty">Chưa có mô tả cho sản phẩm này.</string>
+    <string name="status_active">Đang kinh doanh</string>
+    <string name="status_inactive">Ngừng kinh doanh</string>
+    <string name="warning_low_stock_format">Sắp hết hàng – chỉ còn %1$d sản phẩm trong kho</string>
+    <string name="warning_out_of_stock">Hết hàng – vui lòng nhập thêm sản phẩm</string>
+    <string name="action_import_one">+ Nhập thêm 1</string>
+    <string name="action_sell_one">− Bán 1</string>
+    <string name="action_back">Quay lại</string>
+    <string name="action_delete_product">Xóa sản phẩm</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="out_of_stock">Hết hàng</string>
+    <string name="import_success">Đã nhập thêm 1 sản phẩm</string>
+    <string name="sell_success">Đã bán 1 sản phẩm</string>
+    <string name="quantity_max_reached">Số lượng đã đạt mức tối đa</string>
+    <string name="update_failed">Không thể cập nhật số lượng</string>
+    <string name="delete_dialog_title">Xóa sản phẩm</string>
+    <string name="delete_confirm_message">Bạn có chắc chắn muốn xóa sản phẩm này?</string>
+    <string name="delete_success">Đã xóa sản phẩm thành công</string>
+    <string name="product_not_found">Sản phẩm không tồn tại hoặc đã bị xóa</string>
+
+    <!-- ===== Mô tả cho trình đọc màn hình ===== -->
+    <string name="cd_logo">Logo Quản lý kho hàng</string>
+    <string name="cd_back">Quay lại</string>
+    <string name="cd_category_icon">Biểu tượng loại sản phẩm</string>
+    <string name="cd_open_detail">Xem chi tiết</string>
+</resources>

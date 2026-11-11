@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Bảng màu KhoNova ===== -->
+    <color name="navy">#171C3B</color>            <!-- Primary – Midnight Navy -->
+    <color name="navy_light">#2A2763</color>      <!-- Điểm cuối gradient header -->
+    <color name="indigo">#705CF6</color>          <!-- Secondary – Indigo Purple -->
+    <color name="indigo_dark">#5643E0</color>
+    <color name="indigo_soft">#EEEBFE</color>
+    <color name="background">#F5F6FC</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="text_primary">#20243A</color>
+    <color name="text_secondary">#85899B</color>
+    <color name="mint">#20B8A6</color>            <!-- Success -->
+    <color name="mint_soft">#E2F6F3</color>
+    <color name="coral">#FF647C</color>           <!-- Warning -->
+    <color name="coral_soft">#FFECEF</color>
+    <color name="border">#E8EAF3</color>
+    <color name="input_background">#FAFAFE</color>
+    <color name="tile_background">#F6F7FC</color>
+
+    <!-- Trắng trong suốt dùng trên nền Navy -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="white_alpha_85">#D9FFFFFF</color>
+    <color name="white_alpha_70">#B3FFFFFF</color>
+    <color name="white_alpha_60">#99FFFFFF</color>
+    <color name="white_alpha_20">#33FFFFFF</color>
+    <color name="white_alpha_12">#1FFFFFFF</color>
+    <color name="indigo_alpha_12">#1F705CF6</color>
+
+    <!-- Màu theo loại sản phẩm -->
+    <color name="cat_electronics">#705CF6</color>
+    <color name="cat_electronics_soft">#EEEBFE</color>
+    <color name="cat_food">#20B8A6</color>
+    <color name="cat_food_soft">#E2F6F3</color>
+    <color name="cat_office">#F09A0C</color>
+    <color name="cat_office_soft">#FEF3DC</color>
+    <color name="cat_household">#3E7BFA</color>
+    <color name="cat_household_soft">#E6EEFF</color>
+    <color name="cat_other">#6B7089</color>
+    <color name="cat_other_soft">#EEEFF4</color>
+
+    <!-- Giữ lại các màu mặc định của template -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+</resources>

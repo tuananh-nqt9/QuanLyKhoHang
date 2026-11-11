@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Khoảng cách -->
+    <dimen name="screen_padding">20dp</dimen>
+    <dimen name="space_xxs">2dp</dimen>
+    <dimen name="space_xs">4dp</dimen>
+    <dimen name="space_sm">8dp</dimen>
+    <dimen name="space_md">12dp</dimen>
+    <dimen name="space_lg">16dp</dimen>
+    <dimen name="space_xl">20dp</dimen>
+    <dimen name="space_xxl">24dp</dimen>
+    <dimen name="space_huge">32dp</dimen>
+
+    <!-- Bo góc -->
+    <dimen name="radius_card">20dp</dimen>
+    <dimen name="radius_card_large">24dp</dimen>
+    <dimen name="radius_input">14dp</dimen>
+    <dimen name="radius_button">16dp</dimen>
+    <dimen name="radius_icon">14dp</dimen>
+
+    <!-- Kích thước -->
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="input_height">56dp</dimen>
+    <dimen name="icon_button_size">44dp</dimen>
+    <dimen name="icon_container">52dp</dimen>
+    <dimen name="icon_container_small">40dp</dimen>
+    <dimen name="icon_container_large">64dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="card_elevation_raised">8dp</dimen>
+    <dimen name="header_overlap">56dp</dimen>
+    <dimen name="list_bottom_space">104dp</dimen>
+
+    <!-- Cỡ chữ -->
+    <dimen name="text_display">28sp</dimen>
+    <dimen name="text_headline">26sp</dimen>
+    <dimen name="text_title_large">22sp</dimen>
+    <dimen name="text_title">18sp</dimen>
+    <dimen name="text_body_large">16sp</dimen>
+    <dimen name="text_body">14sp</dimen>
+    <dimen name="text_caption">12sp</dimen>
+    <dimen name="text_badge">11sp</dimen>
+</resources>
+

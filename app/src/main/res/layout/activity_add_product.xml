@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="false">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== HEADER MÀU NAVY ===== -->
+            <FrameLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_navy_header_sub">
+
+                <LinearLayout
+                    android:id="@+id/headerContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/screen_padding"
+                    android:paddingTop="28dp"
+                    android:paddingBottom="24dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Nút Quay lại -->
+                        <ImageButton
+                            android:id="@+id/btnBack"
+                            style="@style/KhoNova.HeaderIconButton"
+                            android:contentDescription="@string/cd_back"
+                            android:src="@drawable/ic_arrow_back" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-black"
+                                android:text="@string/add_title"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/add_subtitle"
+                                android:textColor="@color/white_alpha_85"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== FORM NHẬP THÔNG TIN SẢN PHẨM ===== -->
+            <LinearLayout
+                android:id="@+id/formContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-8dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/screen_padding">
+
+                <!-- CARD 1: THÔNG TIN CƠ BẢN -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/KhoNova.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            style="@style/KhoNova.Text.SectionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/section_basic_info"
+                            android:textColor="@color/text_primary" />
+
+                        <!-- Tên sản phẩm (Bắt buộc) -->
+                        <TextView
+                            style="@style/KhoNova.Text.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/label_product_name" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilProductName"
+                            style="@style/KhoNova.TextInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:startIconDrawable="@drawable/ic_box">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtProductName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/hint_product_name"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapSentences"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Loại sản phẩm (Spinner 5 mục bắt buộc) -->
+                        <TextView
+                            style="@style/KhoNova.Text.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/label_category" />
+
+                        <Spinner
+                            android:id="@+id/spinnerCategory"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/input_height"
+                            android:layout_marginTop="6dp"
+                            android:background="@drawable/bg_spinner"
+                            android:overlapAnchor="false"
+                            android:spinnerMode="dropdown" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- CARD 2: GIÁ BÁN & TỒN KHO -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/KhoNova.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            style="@style/KhoNova.Text.SectionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/section_price_stock"
+                            android:textColor="@color/text_primary" />
+
+                        <!-- Giá bán (VNĐ, > 0) -->
+                        <TextView
+                            style="@style/KhoNova.Text.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/label_price" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilPrice"
+                            style="@style/KhoNova.TextInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:startIconDrawable="@drawable/ic_trending_up"
+                            app:suffixText="@string/suffix_currency">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtPrice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/hint_price"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <!-- Live preview giá bán khi gõ -->
+                        <TextView
+                            android:id="@+id/tvPricePreview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="sans-serif-medium"
+                            android:textColor="@color/mint"
+                            android:textSize="12sp"
+                            android:visibility="gone"
+                            tools:text="Hiển thị: 250.000 đ"
+                            tools:visibility="visible" />
+
+                        <!-- Số lượng (>= 0) -->
+                        <TextView
+                            style="@style/KhoNova.Text.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:text="@string/label_quantity" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilQuantity"
+                            style="@style/KhoNova.TextInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:helperText="Nhập 0 nếu tạm hết hàng; dưới 5 sẽ cảnh báo 'Sắp hết hàng'"
+                            app:startIconDrawable="@drawable/ic_layers"
+                            app:suffixText="@string/suffix_quantity">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtQuantity"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="@string/hint_quantity"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:maxLines="1" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- CARD 3: TRẠNG THÁI & MÔ TẢ -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/KhoNova.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            style="@style/KhoNova.Text.SectionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/section_status_description"
+                            android:textColor="@color/text_primary" />
+
+                        <!-- Switch Đang kinh doanh -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    style="@style/KhoNova.Text.Label"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/label_active" />
+
+                                <TextView
+                                    android:id="@+id/tvActiveDescription"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:text="@string/active_on_description"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+                            </LinearLayout>
+
+                            <com.google.android.material.materialswitch.MaterialSwitch
+                                android:id="@+id/switchActive"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:checked="true" />
+                        </LinearLayout>
+
+                        <!-- Phân cách nhẹ -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginVertical="16dp"
+                            android:background="@color/border" />
+
+                        <!-- Mô tả sản phẩm (Nhiều dòng, không bắt buộc) -->
+                        <TextView
+                            style="@style/KhoNova.Text.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/label_description" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilDescription"
+                            style="@style/KhoNova.TextInput"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            app:startIconDrawable="@drawable/ic_stationery">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/edtDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="top|start"
+                                android:hint="@string/hint_description"
+                                android:imeOptions="actionDone"
+                                android:inputType="textMultiLine|textCapSentences"
+                                android:minLines="3" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Nút Lưu sản phẩm -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSaveProduct"
+                    style="@style/KhoNova.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/action_save_product"
+                    app:icon="@drawable/ic_check_circle"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

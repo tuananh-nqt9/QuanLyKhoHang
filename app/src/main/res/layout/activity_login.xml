@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true"
+    android:fitsSystemWindows="false"
+    android:overScrollMode="never">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- ===== Background Header màu Navy Gradient ===== -->
+        <View
+            android:id="@+id/headerBackground"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:background="@drawable/bg_navy_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Scrim giả lập vùng Status Bar nếu cần -->
+        <View
+            android:id="@+id/statusBarScrim"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- ===== Khối thương hiệu KhoNova trên Header ===== -->
+        <LinearLayout
+            android:id="@+id/brandLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="@dimen/screen_padding"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/statusBarScrim">
+
+            <!-- Logo hộp hàng hóa nổi bật trong ô kính tròn -->
+            <FrameLayout
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_glass_circle">
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/cd_logo"
+                    android:src="@drawable/ic_box"
+                    app:tint="@color/white" />
+            </FrameLayout>
+
+            <!-- Tên ứng dụng KhoNova -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="sans-serif-black"
+                android:letterSpacing="-0.01"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <!-- Slogan phụ -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:letterSpacing="0.02"
+                android:text="@string/login_tagline"
+                android:textColor="@color/white_alpha_85"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- ===== Card Form Đăng nhập ===== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/loginCard"
+            style="@style/KhoNova.Card"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/screen_padding"
+            app:cardElevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/brandLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/space_xxl">
+
+                <!-- Tiêu đề Form -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/login_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/login_subtitle"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp" />
+
+                <!-- Label Tên đăng nhập -->
+                <TextView
+                    style="@style/KhoNova.Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/label_username" />
+
+                <!-- Ô nhập Tên đăng nhập -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsername"
+                    style="@style/KhoNova.TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:startIconDrawable="@drawable/ic_user">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_username"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textPersonName"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Label Mật khẩu -->
+                <TextView
+                    style="@style/KhoNova.Text.Label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/label_password" />
+
+                <!-- Ô nhập Mật khẩu -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/KhoNova.TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/selector_input_icon"
+                    app:startIconDrawable="@drawable/ic_lock">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/hint_password"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Thông báo lỗi chung (hiển thị màu Coral) -->
+                <TextView
+                    android:id="@+id/tvErrorMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:drawableStart="@drawable/ic_warning"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/coral"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/coral"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:text="@string/error_login_invalid"
+                    tools:visibility="visible" />
+
+                <!-- Nút Đăng nhập -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    style="@style/KhoNova.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/action_login" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===== Khối Tài khoản mẫu dùng để kiểm thử (chạm để điền nhanh) ===== -->
+        <LinearLayout
+            android:id="@+id/demoAccountLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/screen_padding"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="@dimen/screen_padding"
+            android:background="@drawable/bg_demo_box"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginCard">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_info"
+                app:tint="@color/indigo" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/demo_account_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="admin  •  123456"
+                    android:textColor="@color/indigo"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                android:text="Điền nhanh"
+                android:textColor="@color/indigo"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Footer thông tin phiên bản -->
+        <TextView
+            android:id="@+id/tvFooter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:letterSpacing="0.02"
+            android:text="@string/login_footer"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/demoAccountLayout"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

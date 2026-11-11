@@ -1,0 +1,20 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Icon KhoNova: Thùng hàng trung tâm với điểm nhấn tím Indigo -->
+    <path
+        android:fillColor="#705CF6"
+        android:pathData="M54,22L28,36l26,14 26,-14L54,22z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,39.5v32.5L52,86V53.5L26,39.5z"
+        android:fillAlpha="0.92" />
+    <path
+        android:fillColor="#EEEBFE"
+        android:pathData="M56,53.5V86l26,-14V39.5L56,53.5z" />
+    <path
+        android:fillColor="#705CF6"
+        android:pathData="M54,58L42,51.5v6L54,64l12,-6.5v-6L54,58z" />
+</vector>

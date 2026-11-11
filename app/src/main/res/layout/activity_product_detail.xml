@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fitsSystemWindows="false">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== HEADER MÀU NAVY ===== -->
+            <FrameLayout
+                android:id="@+id/headerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_navy_header_sub">
+
+                <LinearLayout
+                    android:id="@+id/headerContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="@dimen/screen_padding"
+                    android:paddingTop="28dp"
+                    android:paddingBottom="24dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- Nút Quay lại trên header -->
+                        <ImageButton
+                            android:id="@+id/btnHeaderBack"
+                            style="@style/KhoNova.HeaderIconButton"
+                            android:contentDescription="@string/cd_back"
+                            android:src="@drawable/ic_arrow_back" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-black"
+                                android:text="@string/detail_title"
+                                android:textColor="@color/white"
+                                android:textSize="22sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/detail_subtitle"
+                                android:textColor="@color/white_alpha_85"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ===== CÁC KHỐI THÔNG TIN CHI TIẾT ===== -->
+            <LinearLayout
+                android:id="@+id/detailContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-8dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="@dimen/screen_padding">
+
+                <!-- CARD 1: PRODUCT HERO CARD (Tên, Loại, Trạng thái, Giá bán) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHero"
+                    style="@style/KhoNova.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Icon loại sản phẩm -->
+                            <FrameLayout
+                                android:id="@+id/iconContainer"
+                                android:layout_width="56dp"
+                                android:layout_height="56dp"
+                                android:background="@drawable/bg_icon_container">
+
+                                <ImageView
+                                    android:id="@+id/imgCategoryIcon"
+                                    android:layout_width="28dp"
+                                    android:layout_height="28dp"
+                                    android:layout_gravity="center"
+                                    android:contentDescription="@string/cd_category_icon"
+                                    android:src="@drawable/ic_devices"
+                                    app:tint="@color/indigo" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="14dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <!-- Badges hàng trên: Category + Active Status -->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tvCategoryBadge"
+                                        style="@style/KhoNova.Text.Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/indigo"
+                                        tools:text="Điện tử" />
+
+                                    <TextView
+                                        android:id="@+id/tvStatusBadge"
+                                        style="@style/KhoNova.Text.Badge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="6dp"
+                                        android:background="@drawable/bg_badge_success"
+                                        android:text="@string/status_active"
+                                        android:textColor="@color/mint"
+                                        tools:text="Đang kinh doanh" />
+                                </LinearLayout>
+
+                                <!-- Tên sản phẩm lớn -->
+                                <TextView
+                                    android:id="@+id/tvProductName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="6dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:text="Bàn phím cơ" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Đường phân cách -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="14dp"
+                            android:background="@color/border" />
+
+                        <!-- Giá bán lớn nổi bật -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:text="@string/label_selling_price"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvProductPrice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="2dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:letterSpacing="-0.02"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="28sp"
+                                    android:textStyle="bold"
+                                    tools:text="450.000 đ" />
+                            </LinearLayout>
+
+                            <TextView
+                                style="@style/KhoNova.Text.Badge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:background="@drawable/bg_badge"
+                                android:text="Đã gồm VAT"
+                                android:textColor="@color/indigo" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- CARD 2: INVENTORY INFORMATION (Số lượng tồn & Giá trị tồn kho) -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardInventory"
+                    style="@style/KhoNova.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            style="@style/KhoNova.Text.SectionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/section_inventory"
+                            android:textColor="@color/text_primary" />
+
+                        <!-- Hai cột: Số lượng tồn & Giá trị tồn kho -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal">
+
+                            <!-- Cột trái: Số lượng tồn kho -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_card_outlined"
+                                android:orientation="vertical"
+                                android:padding="14dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:text="@string/label_stock_quantity"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvQuantity"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    tools:text="3" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/unit_product"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+
+                            <!-- Cột phải: Giá trị tồn kho (price * quantity) -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/bg_card_outlined"
+                                android:orientation="vertical"
+                                android:padding="14dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-medium"
+                                    android:text="@string/label_stock_value"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/tvStockValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:fontFamily="sans-serif-black"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    tools:text="1.350.000 đ" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/stock_value_formula"
+                                    android:textColor="@color/text_secondary"
+                                    android:textSize="11sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Banner Cảnh báo hàng sắp hết (quantity < 5) -->
+                        <LinearLayout
+                            android:id="@+id/warningBanner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="14dp"
+                            android:background="@drawable/bg_badge_low_stock"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="10dp"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:contentDescription="@null"
+                                android:src="@drawable/ic_warning"
+                                app:tint="@color/coral" />
+
+                            <TextView
+                                android:id="@+id/tvWarningText"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_weight="1"
+                                android:fontFamily="sans-serif-medium"
+                                android:textColor="@color/coral"
+                                android:textSize="12sp"
+                                tools:text="Sắp hết hàng – chỉ còn 3 sản phẩm trong kho" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- CARD 3: MÔ TẢ SẢN PHẨM -->
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/KhoNova.Card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    app:cardElevation="3dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            style="@style/KhoNova.Text.SectionTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/section_description"
+                            android:textColor="@color/text_primary" />
+
+                        <TextView
+                            android:id="@+id/tvDescription"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:lineSpacingExtra="4dp"
+                            android:textColor="@color/text_primary"
+                            android:textSize="14sp"
+                            tools:text="Bàn phím cơ 87 phím, switch Blue cho cảm giác gõ rõ ràng, có đèn nền LED." />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ===== CÁC NÚT THAO TÁC ===== -->
+                <!-- Hàng: "+ Nhập thêm 1" và "− Bán 1" -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
+
+                    <!-- Nút Nhập thêm 1 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnImportOne"
+                        style="@style/KhoNova.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/action_import_one"
+                        app:backgroundTint="@color/indigo" />
+
+                    <!-- Nút Bán 1 -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSellOne"
+                        style="@style/KhoNova.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:text="@string/action_sell_one"
+                        app:backgroundTint="#F09A0C" />
+                </LinearLayout>
+
+                <!-- Nút Quay lại (Outlined) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBack"
+                    style="@style/KhoNova.Button.Outlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/action_back"
+                    app:icon="@drawable/ic_arrow_back"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp" />
+
+                <!-- Nút Xóa sản phẩm (Coral / Danger) -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDeleteProduct"
+                    style="@style/KhoNova.Button.Danger"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_height"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="32dp"
+                    android:text="@string/action_delete_product"
+                    app:icon="@drawable/ic_delete"
+                    app:iconGravity="textStart"
+                    app:iconPadding="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
